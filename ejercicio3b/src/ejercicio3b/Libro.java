@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio3;
+package ejercicio3b;
 
 /**
  *
  * @author Luciano
  */
 public class Libro {
-
+    
     private String titulo;
     private String autor;
     private int nroPag;

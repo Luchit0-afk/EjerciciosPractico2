@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio3;
+package ejercicio3b;
 
 /**
  *
  * @author Luciano
  */
-public class Catalogo {     
+public class Catalogo {
     private Libro[] libros;
     private int nroLibros;
     private final int DEFAULT_MAX = 50;
@@ -28,11 +28,19 @@ public class Catalogo {
     // Si el catalogo no esta lleno inserta el libro al final del arreglo 
     public boolean agregarLibro(Libro l) {
     	if(nroLibros < DEFAULT_MAX){
+            //System.out.println(DEFAULT_MAX - nroLibros);
             for(int i = DEFAULT_MAX - nroLibros; i < DEFAULT_MAX ; i++){
-                libros[i].titulo = l.obtenerTitulo();
-                libros[i].autor = l.obtenerAutor();
-                 
+                libros[i - 1] = new Libro();
+                libros[i - 1].asignarTitulo(libros[i].obtenerTitulo());
+                libros[i - 1].asignarAutor(libros[i].obtenerAutor());
+                libros[i - 1].asignarNroPag(libros[i].obtenerNroPag());
             }
+            //System.out.println(DEFAULT_MAX - 1);
+            libros[DEFAULT_MAX - 1] = new Libro();
+            libros[DEFAULT_MAX - 1].asignarTitulo(l.obtenerTitulo());
+            libros[DEFAULT_MAX - 1].asignarAutor(l.obtenerAutor());
+            libros[DEFAULT_MAX - 1].asignarNroPag(l.obtenerNroPag());
+            nroLibros++;
         }
         return false;
     }
@@ -40,17 +48,16 @@ public class Catalogo {
     // Si hay un libro con titulo t en el catalogo lo retorna, sino devuelve null.
     public Libro buscarPorTitulo(String t) {
         for(int i = 0;i < nroLibros ; i++){
-            if(libro.[i].obtenerTitulo() == t.obtenerTitulo()){
-                return libro.[i];
+            if((libros[i].obtenerTitulo().equals(t))) {
+                return libros[i];
             }
         }
         return null;
     }
 
     public void mostrar() {
-        for (int i = 0; i<nroLibros; i++) 
-            System.out.println("Libro " + i + ": " + libros[i].toString());
+        for (int i = DEFAULT_MAX; i > DEFAULT_MAX - nroLibros; i--) 
+            System.out.println("Libro " + i + ": " + libros[i - 1].toString());
     }
-
 
 }
