@@ -1,8 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ejercicio9;
 
-
+/**
+ *
+ * @author Luciano
+ */
 public class Racional {
-
+    
     private long nume;
     private long deno;
 
@@ -69,7 +77,7 @@ public class Racional {
         long b = Math.min(n1,n2);
         do{
             mcd = b;
-            b = a&b;
+            b = a%b;
             a = mcd;
         }while (b!=0);
         return mcd;
@@ -84,58 +92,55 @@ public class Racional {
         return mcm;
     }
 
-
+    //Suma de racionales
     public Racional sumar(Racional n){
+        System.out.println("Prueba");
         long denoAux;
         denoAux = deno;
+        System.out.println("Prueba");
         deno = mcm(deno,n.getDeno());
-        nume = (deno / denoAux)*nume + (deno / (n.getDeno()))*(n.getNume);
+        nume = (deno / denoAux)*nume + (deno / (n.getDeno()))*(n.getNume());
         return this;
     }
+
+    //Resta de racionales
+    public Racional restar(Racional n){
+        long denoAux = deno;
+        deno = mcm(deno,n.getDeno());
+        nume = (deno / denoAux)*nume - (deno / (n.getDeno()))*(n.getNume());
+        return this;
+    }
+
+    //toString
+    @Override
+    public String toString(){
+        return this.nume + "/" + this.deno;
+    }
+
+    //equals
+    @Override
+    public boolean equals(Object other){
+        if (other == this) return true;
+        if (other == null) return false;
+        if (other.getClass() != this.getClass()) return false;
+        return (this.getNume() == ((Racional)other).getNume() &&
+               this.getDeno() == ((Racional)other).getDeno());
+
+    }
+
 }
 
 
 
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Override
-    public String toString() {
-        return "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + nroPag;
-    }
-    
-    @Override
-    public boolean equals(Object other) {
-        if (other == this) return true;
-        if (other == null) return false;
-        if (other.getClass() != this.getClass()) return false;
-        return (this.obtenerAutor().equals(((Libro)other).obtenerAutor()) &&
-                this.obtenerTitulo().equals(((Libro)other).obtenerTitulo()) &&
-                this.obtenerNroPag() == ((Libro)other).obtenerNroPag());
-    }
+//    @Override
+//    public boolean equals(Object other) {
+//        if (other == this) return true;
+//        if (other == null) return false;
+//        if (other.getClass() != this.getClass()) return false;
+//        return (this.obtenerAutor().equals(((Libro)other).obtenerAutor()) &&
+//                this.obtenerTitulo().equals(((Libro)other).obtenerTitulo()) &&
+//                this.obtenerNroPag() == ((Libro)other).obtenerNroPag());
+//    }
+//}
