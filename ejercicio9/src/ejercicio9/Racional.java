@@ -94,10 +94,8 @@ public class Racional {
 
     //Suma de racionales
     public Racional sumar(Racional n){
-        System.out.println("Prueba");
         long denoAux;
         denoAux = deno;
-        System.out.println("Prueba");
         deno = mcm(deno,n.getDeno());
         nume = (deno / denoAux)*nume + (deno / (n.getDeno()))*(n.getNume());
         return this;
