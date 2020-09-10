@@ -12,24 +12,47 @@ package ejercicio4;
 public class Pila {
     private int pila[];
     private int cant;
-    private final int max = 250;
+    private int max = 2;
 
     public Pila(){
-    	pila = new int[250];
+    	pila = new int[max];
     	cant = 0;
     }
 
     //Asumo que el int pasado es menor a 250
     public Pila(int m){
-    	pila = new int[m];
-    	cant = 0;
+        if(m > max){
+            System.out.println("Tirar excepcion");
+        }
+        else{
+            pila = new int[m];
+            cant = 0;
+        }
+
     }
 
     public boolean is_empy(){
     	return cant == 0;
     }
 
+    public Pila is_full(){
+        int aMax = max;
+        max = aMax + ((0.5)* aMax);
+        System.out.println(max);
+        Pila pilaAux = new Pila(max);
+        System.out.println("Se ha excedido el numero maximo del arreglo. Estamos aumentando este numero.");
+        for(int i = 0; i < aMax - 1; i++){
+             pilaAux.ins(pila.tope());
+             pila.del();
+         }
+        System.out.println("El nuevo maximo es de: " + max);
+        return this;
+    }
+
     public void ins(int n){
+        if(cant == max){
+            pila.is_full();
+        }
     	if(cant != 0){
       		for(int i = cant; i> 0;i--){
     			pila[i] = pila[i - 1];

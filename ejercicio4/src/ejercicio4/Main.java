@@ -16,28 +16,28 @@ public class Main {
      */
     public static void main(String[] args) {
         Pila pila = new Pila();
-        Pila pila2 = new Pila(70);
+        //Pila pila2 = new Pila(70);
         //System.out.println(pila.maxCant());
         //System.out.println(pila2.maxCant());
         pila.ins(4);
         pila.ins(3);
         pila.show();
-        pila.del();
-        pila.show();
-        System.out.println("El primer elemento es: " + pila.tope());
-        pila.del();
-        pila.ins(9);
-        pila.ins(8);
-	pila.ins(7);
-        pila.ins(6);
-    	pila.ins(5);
-        pila.ins(4);
-        pila.ins(3);
-        pila.ins(2);
-        pila.ins(1);
-        pila.ins(0);
-        pila.show();
-        pila.reverse();
+        //pila.del();
+        //pila.show();
+        //System.out.println("El primer elemento es: " + pila.tope());
+    //    pila.del();
+      //  pila.ins(9);
+    //    pila.ins(8);
+//	    pila.ins(7);
+  //      pila.ins(6);
+    //	pila.ins(5);
+      //  pila.ins(4);
+        //pila.ins(3);
+        //pila.ins(2);
+        //pila.ins(1);
+        //pila.ins(0);
+        //pila.show();
+        //pila.reverse();
 
     }
     
