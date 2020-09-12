@@ -22,6 +22,17 @@ public class Main {
         pila.ins(4);
         pila.ins(3);
         pila.show();
+        //System.out.println("max es: " + pila.getMax());
+        pila.ins(5);
+        pila.show();
+        //System.out.println("max es: " + pila.getMax());
+        //pila.ins(6);
+        //pila.del();
+        //pila.show();
+        //pila.show();
+        //pila.ins(6);
+        //System.out.println("Cant es: " + pila.getCant());
+        //pila.show();
         //pila.del();
         //pila.show();
         //System.out.println("El primer elemento es: " + pila.tope());

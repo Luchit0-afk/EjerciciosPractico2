@@ -12,46 +12,45 @@ package ejercicio4;
 public class Pila {
     private int pila[];
     private int cant;
-    private int max = 2;
+    private int max;
 
     public Pila(){
+        max = 2;
     	pila = new int[max];
     	cant = 0;
     }
 
     //Asumo que el int pasado es menor a 250
     public Pila(int m){
-        if(m > max){
-            System.out.println("Tirar excepcion");
-        }
-        else{
             pila = new int[m];
             cant = 0;
-        }
-
+            max = m;
+            //System.out.println(this.max);
+    }
+    
+    public int getMax() {
+        return max;
     }
 
+    public void setMax(int max) {
+        this.max = max;
+    }
+    
+    public int getCant() {
+        return cant;
+    }
+
+    public void setCant(int cant) {
+        this.cant = cant;
+    }
+    
     public boolean is_empy(){
     	return cant == 0;
     }
 
-    public Pila is_full(){
-        int aMax = max;
-        max = aMax + ((0.5)* aMax);
-        System.out.println(max);
-        Pila pilaAux = new Pila(max);
-        System.out.println("Se ha excedido el numero maximo del arreglo. Estamos aumentando este numero.");
-        for(int i = 0; i < aMax - 1; i++){
-             pilaAux.ins(pila.tope());
-             pila.del();
-         }
-        System.out.println("El nuevo maximo es de: " + max);
-        return this;
-    }
-
     public void ins(int n){
         if(cant == max){
-            pila.is_full();
+            this.is_full();
         }
     	if(cant != 0){
       		for(int i = cant; i> 0;i--){
@@ -73,8 +72,22 @@ public class Pila {
     	return pila[0];
     }
 
-    public int maxCant(){
-    	return cant;
+    public Pila is_full(){
+        int aCant = this.cant;
+        Pila pilaAux = new Pila(max*2);
+        //System.out.println("Se ha excedido el numero maximo del arreglo. Estamos aumentando este numero.");
+        for(int i = 0; i < this.cant - 1; i++){
+            pilaAux.ins(this.tope());
+            this.del();
+            //pilaAux.show();
+        }
+        //this.show();
+        max = max*2;
+        pilaAux.setCant(aCant);
+        //pilaAux.show();
+        //pilaAux.reverse();
+        //pilaAux.show();
+        return pilaAux;
     }
 
     public void show(){

@@ -20,10 +20,22 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-    //Pre-condition: The values they [], and (). No more
-       System.out.println("Ingrese corchetes y paretensis.");
-       String f = sc.nextLine();
-       System.out.println("El valor ingresado es: " + f);
+        //Pre-condition: The values they [], and (). No more
+        //System.out.println("Ingrese corchetes y paretensis.");
+        Lista frase = new Lista();
+        System.out.println("Ingrese una frase: ");
+        String cad = sc.nextLine();
+        frase.cadena(cad,cad.length());
+        //frase.show();
+        boolean balan = frase.balanceada(0);
+       System.out.println("La frase esta balanceada? " + balan);
+       
     }
     
 }
+
+
+ //char gender = sc.next().charAt(0);
+        //char k = sc.next().charAt(0);
+        //boolean f = (gender == 'k');
+        //System.out.println(f);
