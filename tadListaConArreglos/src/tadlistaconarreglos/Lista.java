@@ -31,6 +31,22 @@ public class Lista {
     		cant = 0;
     	}
     }
+    
+    public int getCant() {
+        return cant;
+    }
+
+    public void setCant(int cant) {
+        this.cant = cant;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
 
    	public boolean is_empy(){
    		return (cant == 0);
@@ -40,27 +56,23 @@ public class Lista {
    		cant = 0;
    	}
 
-   	public int length(){
-   		return cant;
-   	}
-
    	public void add(int index,Object item) throws IndiceFueraDeRango{
    		if(index > cant || index < 0){
    			throw new IndiceFueraDeRango();
    		}
-      else{
-        if(index == cant){
-          items[index] = item;
-          cant++;
-        }
-        else{
-          for(int i = cant; i > (cant - index); i--){
-            items[i] = items[i - 1];
-          }
-          items[index] = item;
-          cant++;
-        }
-      }
+                else{
+                    if(index == cant){
+                        items[index] = item;
+                        cant++;
+                    }
+                    else{
+                        for(int i = cant; i > 0; i--){
+                            items[i] = items[i - 1];
+                        }
+                    items[index] = item;
+                    cant++;
+                    }
+                }
     }
 
     public void del(int index) throws IndiceFueraDeRango{
@@ -92,4 +104,41 @@ public class Lista {
         System.out.println("]");
     }
 
+    public Lista copy(Lista l) throws IndiceFueraDeRango{
+      cant = 0;
+      max = l.getMax();
+      for(int i = 0 ; i < l.getCant() ; i++){
+        items[i] = l.obtener(i);
+        cant = cant + 1;
+      }
+      return this;
+    }
+
+    public boolean equals(Lista l) throws IndiceFueraDeRango{
+      if(this.cant != l.getCant()) return false;
+      if(this.max  != l.getMax()) return false;
+      for(int i = 0; i < cant ; i++){
+        if(items[i] != l.obtener(i)){
+          return false;
+        }
+      }
+      return true;
+    }
+
+    public Lista copyWhitElem(Lista l){
+      cant = l.getCant();
+      max = l.getMax();
+      return this;
+    }
+
+    //Agrega al principio
+    public Lista agregar(Lista l) throws IndiceFueraDeRango{
+      int o = cant;
+      for(int i = 0 ; i < l.getCant() ; i++){
+        items[o] = l.obtener(i);
+        o++;
+        cant++;
+      }
+      return this;
+    }
 }

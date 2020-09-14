@@ -15,7 +15,7 @@ public class Pila {
     private int max;
 
     public Pila(){
-        max = 2;
+        max = 4;
     	pila = new int[max];
     	cant = 0;
     }
@@ -76,18 +76,15 @@ public class Pila {
         int aCant = this.cant;
         Pila pilaAux = new Pila(max*2);
         //System.out.println("Se ha excedido el numero maximo del arreglo. Estamos aumentando este numero.");
-        for(int i = 0; i < this.cant - 1; i++){
+        for(int i = cant - 1; i >= 0 ; i--){
             pilaAux.ins(this.tope());
             this.del();
-            //pilaAux.show();
         }
-        //this.show();
         max = max*2;
         pilaAux.setCant(aCant);
+        this = this.copy(pilaAux);
         //pilaAux.show();
-        //pilaAux.reverse();
-        //pilaAux.show();
-        return pilaAux;
+        return this;
     }
 
     public void show(){
@@ -98,11 +95,24 @@ public class Pila {
     	System.out.println("]");
     }
 
-    public void reverse(){
-    	System.out.print("[");
-    	for(int i = cant; i > 0; i--){
-			System.out.print(" " + pila[i] + " ");
-    	}
-    	System.out.println("]");
+    public Pila reverse(){
+        Pila rev = new Pila(max);
+        int aCant = cant;
+        for(int i = cant - 1; i >= 0;i--){
+            rev.ins(this.tope());
+            this.del();
+        }
+        rev.setCant(aCant);
+        return rev;
+    }
+
+    public Pila copy(Pila p){
+        this.max = p.getMax();
+        this.cant = p.getCant();
+        for(int i = 0; i < cant ; i++){
+            this.ins(p.tope());
+            p.del();
+        }
+        return this;
     }
 }

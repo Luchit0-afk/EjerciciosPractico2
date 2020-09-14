@@ -17,17 +17,16 @@ public class Main {
      */
     public static void main(String[] args) throws IndiceFueraDeRango {
         Lista l = new Lista();
-        l.add(0,1);
-        l.add(1,2);
-        l.add(2,3);
-        l.add(3,4);
-        l.del(2);
-        System.out.println("El primer elemento es: " +  l.obtener(0));
-        //boolean bool = l.is_empy();
-        //System.out.println(bool);
-        l.show();
-        System.out.println("La longitud es: " + l.length());
-        //Lista l3 = new Lista(251);
+        for(int i = 0;i < 20 ; i++){
+            l.add(i,i);
+        }
+        Lista l2 = new Lista();
+        l2.add(0,1);
+        l2.add(1,5);
+        l2.add(2,8);
+        l2.add(3,9);
+        l2.agregar(l);
+        l2.show();
     }
     
 }

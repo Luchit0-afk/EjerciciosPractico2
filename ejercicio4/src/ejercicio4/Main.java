@@ -21,9 +21,13 @@ public class Main {
         //System.out.println(pila2.maxCant());
         pila.ins(4);
         pila.ins(3);
+        pila.ins(5);
+        pila.ins(6);
         pila.show();
         //System.out.println("max es: " + pila.getMax());
-        pila.ins(5);
+        //Pila rev = new Pila();
+        //rev = pila.reverse();
+        pila.ins(7);
         pila.show();
         //System.out.println("max es: " + pila.getMax());
         //pila.ins(6);
