@@ -3,29 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio4;
+package colaconlistaencadenada;
 
 /**
  *
  * @author Luciano
  */
 public class Pila {
-    private int pila[];
+    private char pila[];
     private int cant;
-    private int max;
+    private int max = 250;
 
     public Pila(){
-        max = 4;
-    	pila = new int[max];
+    	pila = new char[max];
     	cant = 0;
     }
 
     //Asumo que el int pasado es menor a 250
     public Pila(int m){
-            pila = new int[m];
+            pila = new char[m];
             cant = 0;
             max = m;
-            //System.out.println(this.max);
     }
     
     public int getMax() {
@@ -48,7 +46,7 @@ public class Pila {
     	return cant == 0;
     }
 
-    public void ins(int n){
+    public void ins(char n){
     	if(cant != 0){
       		for(int i = cant; i> 0;i--){
     			pila[i] = pila[i - 1];
@@ -75,26 +73,5 @@ public class Pila {
     		System.out.print(" " + pila[i] + " ");
     	}
     	System.out.println("]");
-    }
-
-    public Pila reverse(){
-        Pila rev = new Pila(max);
-        int aCant = cant;
-        for(int i = cant - 1; i >= 0;i--){
-            rev.ins(this.tope());
-            this.del();
-        }
-        rev.setCant(aCant);
-        return rev;
-    }
-
-    public Pila copy(Pila p){
-        this.max = p.getMax();
-        this.cant = p.getCant();
-        for(int i = 0; i < cant ; i++){
-            this.ins(p.tope());
-            p.del();
-        }
-        return this;
     }
 }
