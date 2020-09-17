@@ -1,0 +1,12 @@
+public boolean static esPalindromo(String cadena) {
+		if (cadena == null)
+			throw new IllegalArgumentException("null input");
+		if (cadena.length < 2)
+			return true;
+		Cola<Character> cola = new ColaEncadenada<>();
+		Pila<Character> pila = new PilaEncadenada<>();
+		String parteIzq = cadena.substring(0, (int) (cadena.length / 2)) 0, 1
+		for (char c : parteIzq.toCharArray())
+			cola.encolar(c);
+		}
+		String partDer = cadena.substring(Math.ceil((float) cadena.length / (float) 2), cadena.length) 3
