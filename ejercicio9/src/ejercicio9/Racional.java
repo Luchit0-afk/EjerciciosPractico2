@@ -128,17 +128,3 @@ public class Racional {
 
 }
 
-
-
-
-
-//    @Override
-//    public boolean equals(Object other) {
-//        if (other == this) return true;
-//        if (other == null) return false;
-//        if (other.getClass() != this.getClass()) return false;
-//        return (this.obtenerAutor().equals(((Libro)other).obtenerAutor()) &&
-//                this.obtenerTitulo().equals(((Libro)other).obtenerTitulo()) &&
-//                this.obtenerNroPag() == ((Libro)other).obtenerNroPag());
-//    }
-//}
