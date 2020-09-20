@@ -106,8 +106,4 @@ public class ListaEncadenada<T> implements Lista<T> {
 		}
 		System.out.println("]");
 	}
-
-
-
-
 }
