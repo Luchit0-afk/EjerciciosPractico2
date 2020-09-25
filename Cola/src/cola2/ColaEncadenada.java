@@ -72,10 +72,10 @@ public class ColaEncadenada<T> implements Cola<T> {
 			throw new IllegalStateException("La lista esta vacia.");
 		}
 		else{
-                        T r = primero.elem();
+            T r = primero.elem();
 			primero = primero.siguiente();
 			elementos--;
-                        return r;
+            return r;
 		}
 	}
 
@@ -99,7 +99,7 @@ public class ColaEncadenada<T> implements Cola<T> {
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException("Implementar y eliminar esta sentencia");	
+		return (String) primero.elem();	
 	}
 
 	@Override
