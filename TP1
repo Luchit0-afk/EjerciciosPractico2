@@ -1,0 +1,27 @@
+1) Para empezar a diferenciar los objetos de las clases, debemos dejar en claro de antemano que aunque su
+significado sea totalmente distinto, las nociones de clase y objeto van de la mano. Un objeto no puede existir
+sin una clase que lo defina y no tiene sentido definir una clase para despues no crear un objeto.
+
+Para empezar a diferenciar estas nociones, definiremos a una clase como una coleccion de objetos que comparten una misma estructura. Esta nocion es parecida a la nocion de TAD. Cada clase tiene distintas instancias y cada instancia es un objeto.En lenguaje coloquial podriamos decir que una clase es una plantilla y los objetos son las cosas que creamos apartir de esa plantilla. Un ejemplo simple seria: un cortador de galletas es una clase y las galletas formadas apartir de ese cortador son los objetos. Ahora para definir a los objetos diremos que son las colecciones de datos y procedimientos creados apartir de la clase. Cada objeto tiene identidad propia aunque los valores de sus atributos sean los mismos. Siguiendo con el ejemplo anterior, aunque las galletas formadas con el cortador tienen las misma forma son objetos distintos.
+
+Si pasamos estas nociones al campo de la computacion, podriamos decir que la clase la creamos cuando escribimos el codigo necesario para definir un objeto, pero el codigo se genera una vez ejecutemos el programa. 
+
+2) La primera diferencia que recalco entre java y C++ es el manejo de memoria. Mientras java tiene un Garbage Collector que se ocupa del manejo de memoria, C++ tiene la nocion de punteros(en java no existen) que nos permite manejar la memoria de la manera que queramos, esto ultimo puede generar programas mucho mas eficientes en un buen uso de punteros o dificulades durante la programacion en un mal uso.
+
+La segunda diferencia que recalco va de la mano con la anterior y es sobre el proceso de compilacion y ejecucion. Java tiene una maquina virtual y compila y ejecuta los programas sobre esta. La principal ventaja de esto es poder pasar las aplicaciones de un computador a otro y que esta funcione de la misma manera(siempre y cuando tenga la maquina virtual de java). En C++ en cambio, hay diferentes compiladores y estos generan un codigo maquina para ejecutarse sobre el procesador donde estan trabajando. Lo que sucede en este caso es que un programa compilado para determinado procesador no va a funcionar cuando pasemos el mismo programa a otro computador con diferente procesador.
+
+3) Arreglar redaccion
+
+	clase abtrabta 
+	puede tener contructor
+	debe poseer por lo menos un metodo
+	es obligatorio definir todos sus metodos abtrabtos
+
+	interface
+	no es posible la herencia multiple en java
+	no se definen como se hacen las cosas, las clases hijas definen eso
+	a diferencia de la clase abtrabta, la interfaz no puede hacer anda por si sola
+
+La clase abstracta y la interfaz son conceptos muy diferentes pero que comparten algo en comun: Los metodos abstractos. Estos son metodos vacios que deben ser implementados por la clase hija. Ahora responder la pregunta principal:
+Por un lado, la clase abstracta es una clase comun que puede poseer atributos, metodos, contructores y por lo menos un metodo abstracto, estas clases no puede ser instanciadas solo heredadas y la clase hija que la hereda debe implementar los metodos abstractos. En cambio, las interfaces son una coleccion de metodos abtrabtos en donde se especifica que se debe hacer pero no como, a diferencia de las clases abstractas una interface no puede hacer nada por si sola, solo las clases hijas que las implementan pueden definir el comportamiento de los metodos abtrabtos. La interface es como un contracto, donde se especifica que debe hacer la clase que lo implementa.
+
