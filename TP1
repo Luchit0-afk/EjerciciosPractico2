@@ -25,3 +25,41 @@ La segunda diferencia que recalco va de la mano con la anterior y es sobre el pr
 La clase abstracta y la interfaz son conceptos muy diferentes pero que comparten algo en comun: Los metodos abstractos. Estos son metodos vacios que deben ser implementados por la clase hija. Ahora responder la pregunta principal:
 Por un lado, la clase abstracta es una clase comun que puede poseer atributos, metodos, contructores y por lo menos un metodo abstracto, estas clases no puede ser instanciadas solo heredadas y la clase hija que la hereda debe implementar los metodos abstractos. En cambio, las interfaces son una coleccion de metodos abtrabtos en donde se especifica que se debe hacer pero no como, a diferencia de las clases abstractas una interface no puede hacer nada por si sola, solo las clases hijas que las implementan pueden definir el comportamiento de los metodos abtrabtos. La interface es como un contracto, donde se especifica que debe hacer la clase que lo implementa.
 
+4)
+
+5)
+
+6) Un TAD es un Tipo Abstracto de Dato el cual esta compuesto por una coleccion de operaciones definidas sobre un conjunto de elementos abstractos lo cual significa que solo se puede acceder a sus elementos atraves de sus operaciones. El TAD es el concepto o definicion formal de un tipo de datos que queremos crear, lo que quiere decir que solo vive en el mundo conceptual. Cuando estamos definiendo un TAD lo que nos importa realmente es la definicion formal de sus elementos y/o operaciones y no nos importa su implementacion.Los tipos de operaciones de los TADS son: Observadoras(son aquellas que retornan un elemento de un tipo que no corresponde con el TAD), Modificadoras(son aquellas que toman al menos un elemento del TAD y devuelven algo del tipo del TAD) y Generadoras(son aquellas que no toman elementos del tipo del TAD y devuelven algo del tipo del TAD)  .Por ejemplo: Un TAD seria el concepto de pila con sus operaciones definidas(Push, pop, empty, etc), luego dependiendo del lenguaje o lo que necesitemos hacer, la implementamos de una forma u otra siempre respetando la definicion de sus operaciones.
+
+7) La funcion de abstraccion relaciona un tipo con su implementacion y debe cumplir que sea surjectiva, que cada operacion del algebra abstracta tiene una correspondiente en el algebra concreta y que dependiendo del tipo de operacion
+
+Debe cumplir que sea surjectiva ya que es necesario que todos los elementos del algebra concreta reprensenten, por lo menos una vez, los elementos del algebra abstracta. Si no pasara esto, la implementacion del algebra concreta seria incorrecta. 
+
+8) Una estructura de datos es una forma particular de almacenar, organizar, representar y/o manipular datos para que utilizarlos de manera eficiente. Hay muchas y diversas estructuras de datos, lo que hace muy importante elegir una determinada dependiendo del programa que deseemos construir. Diferentes estructuras de datos sirven para diferentes tipos de programas y algunas son muy efectivas realizando tareas especificas. Por ejemplo: los arreglos y las listas enlazadas tienen sus ventajas y desventajas. Un arreglo es definido en memoria con un tamaño fijo, esto trae la desventaja de que no podemos almanacenar mas datos de lo definido inicialmente, al mismo tiempo trae la ventaja de que podemos acceder a las posiciones del arreglo (y consigo a los elementos) de manera directa. En cambio, las listas enlazadas, no tiene un tamaño fijo al iniciar la aplicacion, cuando necesita memoria la pide y cuando no la necesita mas, la desecha. Esto trae consigo la ventaja de poder almacenar los datos que nosotros queramos(con el unico limite la memoria) y saber que estamos utilizando la memoria justa, pero trae consigo la desventaja de que no podemos acceder a los elementos de manera directa, y para acceder a ellos debemos recorrer la lista uno a uno. Destacando estas dos estructuras de datos se hace visible la importacia de saber elegir la estructura ideal para lo que queramos hacer.
+
+Una estructura de datos lineal es una estructura que esta formada por cero, uno o mas elementos de manera adyacente, es decir, tiene un primer elemento, un segundo elemento y asi hasta llegar al ultimo.3 ejemplos de este tipo de estructuras son:
+Arreglos
+Pilas
+Colas
+
+son distintas estructuras que utilizamos para representar la informacion en un ordenador
+para llevar un mejor control del almacenamiento y manipulacion de los datos
+
+9)Para hablar del metodo repOK primero debemos definir lo que es un invariante de representacion en un tipo de datos. Este invariante es una coleccion(cero, uno o mas) de predicados sobre un algebra concreta que se mantienen verdaderas en cualquier estado. Esto garantiza que siempre cumple con ciertas condiciones.Es muy importante para todos los elementos del algebra abstracta en la algebra concreta o restringir posibles elementos del algebra concreta que no existen en el algebra abstracta.
+Una vez definida esta nocion, podemos decir que el metodo repOK representa el invariante de representacion, diciendo cuales objetos son correctos y cuales no. Este metodo garantiza que el objeto siempre cumpla con ciertas condiciones. Es muy importante a la hora de encontrar errores o bugs en el proceso de testeo. 
+
+
+
+
+
+
+
+
+
+
+
+
+DUDAS PROFE:
+
+Que es un tad?  
+Profe, las operaciones de los tads se pueden clasificar en observadoras, modificadoras y generadoras, o ese concepto de diferenciaciones de las operaciones tiene que ver con algebras 
