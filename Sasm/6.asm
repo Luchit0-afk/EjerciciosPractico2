@@ -4,7 +4,7 @@ section .text
 global CMAIN
 CMAIN:
     mov ebp, esp; for correct debugging
-    mov eax, 0h
+    mov eax, 2h
     cmp eax,1 
     JP par     
     PRINT_STRING "El numero es impar"            

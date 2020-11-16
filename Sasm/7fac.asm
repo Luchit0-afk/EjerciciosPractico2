@@ -1,7 +1,7 @@
 %include "io.inc"
 
 section.data
-    N dd 3
+    N dd 4
 
 section .text
 global CMAIN

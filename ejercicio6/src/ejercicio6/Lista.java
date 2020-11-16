@@ -159,12 +159,12 @@ public class Lista {
 
 */
 
-    public boolean balanceada(){
-        if(items[0] == ']' || items[0] == ')'){
-            return false;
-        }
-        else{
-            if(items[])
-        }
-    }
+    //public boolean balanceada(){
+    //    if(items[0] == ']' || items[0] == ')'){
+    //        return false;
+    //    }
+    //    else{
+    //        if(items[])
+    //    }
+    //}
 }

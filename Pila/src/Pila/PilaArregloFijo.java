@@ -68,10 +68,9 @@ public class PilaArregloFijo<T> implements Pila<T> {
 		//TODO: completar
 	}
 
-	//@Override
-	public T desapilar() {
-		throw new UnsupportedOperationException("Implementar y eliminar esta sentencia");
-		//TODO: completar
+    @Override
+	public T desapilar() throws emptyArray{
+		
 	}
 	
 	//@Override
